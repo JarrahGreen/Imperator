@@ -18,10 +18,14 @@ const timetables = {
 };
 
 function loadTimetable() {
-    const school = document.getElementById("schoolSelect").value;
-    const timetable = timetables[school];
+    const schoolSelect = document.getElementById("schoolSelect");
+    if (!schoolSelect) return; // exit if dropdown doesn't exist
+
+    const school = schoolSelect.value;
+    const timetable = timetables[school] || [];
     const tbody = document.querySelector("#timetable tbody");
-    tbody.innerHTML = "";
+
+    tbody.innerHTML = ""; // Clear existing rows
 
     timetable.forEach(entry => {
         const row = document.createElement("tr");
@@ -30,6 +34,7 @@ function loadTimetable() {
     });
 }
 
+
 function bookClass(cell) {
     if (cell.classList.contains("available")) {
         cell.classList.remove("available");
@@ -37,5 +42,16 @@ function bookClass(cell) {
         cell.innerHTML += " (Booked)";
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    if (burger && nav) {
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    }
+});
 
 window.onload = loadTimetable;
