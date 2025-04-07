@@ -6,6 +6,7 @@ body {
     color: white;
     text-align: center;
 }
+
 nav {
     background: #222;
     padding: 10px;
@@ -25,13 +26,32 @@ nav ul {
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* When the burger menu is pressed*/
+
+.nav-links.active {
+    align-items: flex-start; /* aligns list items to the left */
+}
+
+.nav-links.active li {
+    width: 100%; /* make li take full width */
+}
+
+.nav-links.active li a {
+    display: block;         /* allow full width clickable area */
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;     /* optional: add padding to make it look nice */
 }
 
 .burger {
@@ -52,7 +72,7 @@ nav ul li a {
         display: none; /* Hide nav by default on small screens */
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 30px;
         right: 0;
         background: #222;
         width: 100%;
@@ -64,7 +84,8 @@ nav ul li a {
     }
 
     .burger {
-        display: block; /* Show burger menu */
+        display: inline; /* Show burger menu */
+        color: #0a4b78;
     }
 }
 
