@@ -19,13 +19,14 @@ const timetables = {
 
 function loadTimetable() {
     const schoolSelect = document.getElementById("schoolSelect");
-    if (!schoolSelect) return; // exit if dropdown doesn't exist
+    if (!schoolSelect) return;
 
     const school = schoolSelect.value;
     const timetable = timetables[school] || [];
     const tbody = document.querySelector("#timetable tbody");
 
-    tbody.innerHTML = ""; // Clear existing rows
+    if (!tbody) return;
+    tbody.innerHTML = "";
 
     timetable.forEach(entry => {
         const row = document.createElement("tr");
@@ -33,7 +34,6 @@ function loadTimetable() {
         tbody.appendChild(row);
     });
 }
-
 
 function bookClass(cell) {
     if (cell.classList.contains("available")) {
@@ -44,6 +44,7 @@ function bookClass(cell) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Burger menu toggle
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
 
@@ -52,6 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
             nav.classList.toggle("active");
         });
     }
-});
 
-window.onload = loadTimetable;
+    // Auto-close nav menu on link click (mobile)
+    const navLinks = document.querySelectorAll(".nav-links a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                nav.classList.remove("active");
+            }
+        });
+    });
+
+    // Load timetable if the dropdown exists
+    loadTimetable();
+});
