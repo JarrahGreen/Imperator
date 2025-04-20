@@ -22,6 +22,12 @@ nav {
     z-index: 1000;
 }
 
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -55,11 +61,10 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 60px;
+    top: 20px;
     right: 0;
     background: #222;
     width: 100%;
-    padding: 10px 0;
 }
 
 .nav-links.active li {

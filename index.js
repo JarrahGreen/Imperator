@@ -64,6 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Close burger menu if screen is resized to desktop
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            nav.classList.remove("active");
+        }
+    });
+
     // Load timetable if the dropdown exists
     loadTimetable();
 });
