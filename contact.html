@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+
+    <!-- Re‑use your main CSS ↓ -->
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Classes</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero banner for the contact page -->
+<section class="heroAbout">
+    <h1 style="font-size:3em">Contact Us</h1>
+    <p>We’d love to hear from you!</p>
+</section>
+
+<!-- Contact form -->
+<section style="padding:60px 20px">
+    <h2>Send us a message</h2>
+
+    <form id="contactForm" onsubmit="sendEmail(event)">
+        <label for="name"></label><input id="name" type="text" placeholder="Your name" required />
+        <label for="msg"></label><textarea id="msg" rows="6" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <p style="margin-top:25px">Prefer socials?
+        <a href="https://www.instagram.com/imperator_boxing_gear/" target="_blank" rel="noopener">Follow us on Instagram</a>
+    </p>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="https://www.instagram.com/imperator_boxing_gear/"><img src="Media/instagram.png" alt="Instagram" /></a>
+    </div>
+    <p>&copy; 2025 Imperator Boxing. All rights reserved.</p>
+</footer>
+
+<script src="index.js" defer></script>
+
+</body>
+</html>

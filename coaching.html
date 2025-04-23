@@ -8,7 +8,7 @@
 
 
 </head>
-
+<body>
 <header>
     <nav>
         <div class="burger" onclick="toggleMenu()">
@@ -27,46 +27,36 @@
             </ul>
         </div>
     </nav>
-    <br>
 </header>
 
+<section id="home" class="hero">
+    <h1 style="font-size: 3em">Imperator Boxing</h1>
+    <h2>Train like a champion. Join our elite training programs.</h2>
+    <a href="timetable.html" class="btn">View Classes</a>
+</section>
 
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { max-width: 600px; margin: auto; }
-        .menu { margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid white; padding: 10px; text-align: center; }
-        .available { background-color: lightgreen; cursor: pointer; }
-        .booked { background-color: lightcoral; cursor: not-allowed; }
-    </style>
+<section id="classes">
+    <h2>Our Classes</h2>
+    <p>We offer beginner, intermediate, and advanced boxing training sessions.</p>
+    <a href="timetable.html" class="btn">Book now</a>
+</section>
 
-
-<body>
-<div class="container">
-    <h2>Timetable Booking System</h2>
-    <div class="menu">
-        <label for="schoolSelect">Select School:</label>
-        <select id="schoolSelect" onchange="loadTimetable()">
-            <option value="school1">School 1</option>
-            <option value="school2">School 2</option>
-            <option value="school3">School 3</option>
-            <option value="school4">School 4</option>
-        </select>
+<section id="team">
+    <h2>Meet Our Coaches</h2>
+    <div class="team-container">
+        <div class="coach">
+            <img src="Media/coach1.jpg" alt="Coach 1">
+            <h3><a href="Ollie.html">Coach Ollie</a></h3>
+            <p>Professional box fit coach</p>
+        </div>
+        <div class="coach">
+            <img src="Media/coach2.jpg" alt="Coach 2">
+            <h3>Coach Bob</h3>
+            <p>Certified Fitness Instructor</p>
+        </div>
     </div>
-    <table id="timetable">
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Class Type</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Timetable rows will be inserted dynamically -->
-        </tbody>
-    </table>
-</div>
+</section>
+
 
 
 <footer>
@@ -79,7 +69,6 @@
 
     <p>&copy; 2025 Boxing Club. All rights reserved.</p>
 </footer>
-
 
 <script src="index.js" defer></script>
 

@@ -74,3 +74,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load timetable if the dropdown exists
     loadTimetable();
 });
+
+/* 1)  Build the e‑mail only when the user clicks “Send”.
+   2)  Using pieces prevents bots from scraping the full address. */
+function sendEmail(e) {
+    e.preventDefault();                  // stop normal form submission
+
+    const name = document.getElementById("name").value.trim();
+    const msg  = document.getElementById("msg").value.trim();
+
+    // --- assemble address ---
+    const user = "dylan1080g";           // before the @
+    const host = "gmail.com";            // after the @
+    const address = user + "@" + host;   // complete e‑mail
+
+    // --- build mailto link with subject & body ---
+    const subject = encodeURIComponent("Website enquiry from " + name);
+    const body    = encodeURIComponent(msg);
+
+    // open default mail client
+    window.location.href = `mailto:${address}?subject=${subject}&body=${body}`;
+}

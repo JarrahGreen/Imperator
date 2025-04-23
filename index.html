@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boxing Club</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="index.css">
-
-
 </head>
-<body>
+
 <header>
     <nav>
         <div class="burger" onclick="toggleMenu()">
@@ -21,53 +19,65 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Classes</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+    <br>
 </header>
 
-<section id="home" class="hero">
-    <h1 style="font-size: 3em">Imperator Boxing</h1>
-    <h2>Train like a champion. Join our elite training programs.</h2>
-    <a href="timetable.html" class="btn">View Classes</a>
-</section>
+<body>
+<main>
 
-<section id="classes">
-    <h2>Our Classes</h2>
-    <p>We offer beginner, intermediate, and advanced boxing training sessions.</p>
-    <a href="timetable.html" class="btn">Book now</a>
-</section>
+    <section class="heroShop">
+        <h1 style="font-size: 3em">Quality, Made in England</h1>
+        <h2>Premium boxing gloves crafted by hand with high grade leather</h2>
+    </section>
 
-<section id="team">
-    <h2>Meet Our Coaches</h2>
-    <div class="team-container">
-        <div class="coach">
-            <img src="Media/coach1.jpg" alt="Coach 1">
-            <h3><a href="Ollie.html">Coach Ollie</a></h3>
-            <p>Professional box fit coach</p>
+    <section class="product‑list">
+        <!-- card 1 -->
+        <article class="product">
+            <h2>Classic Boxing Gloves</h2>
+            <img src="./Media/classicBoxingGloves.webp" alt="Classic Boxing Gloves" width="300">
+            <p class="description">12 oz (velcro)</p>
+            <p class="price">£39.99</p>
+            <button class="buy-button">Buy Now</button>
+        </article>
+
+        <!-- card 2 -->
+        <article class="product">
+            <h2>Classic Boxing Gloves</h2>
+            <img src="./Media/classicBoxingGloves.webp" alt="Classic Boxing Gloves" width="300">
+            <p class="description">14 oz (velcro)</p>
+            <p class="price">£39.99</p>
+            <button class="buy-button">Buy Now</button>
+        </article>
+
+        <!-- card 3 -->
+        <article class="product">
+            <h2>Classic Boxing Gloves</h2>
+            <img src="./Media/classicBoxingGloves.webp" alt="Classic Boxing Gloves" width="300">
+            <p class="description">16 oz (lace up)</p>
+            <p class="price">£39.99</p>
+            <button class="buy-button">Buy Now</button>
+        </article>
+    </section>
+
+
+    <footer>
+
+        <div class="footer-links">
+            <a href="https://www.instagram.com/imperator_boxing_gear/"><img src="Media/instagram.png" alt="yes"></a>
+            <a href="contact.html"><img src="Media/email.svg" alt="yes"></a>
         </div>
-        <div class="coach">
-            <img src="Media/coach2.jpg" alt="Coach 2">
-            <h3>Coach Bob</h3>
-            <p>Certified Fitness Instructor</p>
-        </div>
-    </div>
-</section>
 
 
+        <p>&copy; 2025 Boxing Club. All rights reserved.</p>
+    </footer>
 
-<footer>
-
-    <div class="footer-links">
-        <a href="https://www.instagram.com/imperator_boxing_gear/"><img src="Media/instagram.png" alt="yes"></a>
-        <a href="mailto:dylan1080g@gmail.com"><img src="Media/email.svg" alt="yes"></a>
-    </div>
-
-
-    <p>&copy; 2025 Boxing Club. All rights reserved.</p>
-</footer>
+</main>
 
 <script src="index.js" defer></script>
 

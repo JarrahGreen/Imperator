@@ -116,6 +116,42 @@ nav {
     background: url('Media/logo.jpg') no-repeat center center/cover;
 }
 
+
+/* make the list a horizontal row */
+.product‑list {
+    display: flex;          /* switch to flexbox */
+    gap: 2rem;              /* space between cards */
+    flex-wrap: wrap;        /* keep cards side‑by‑side but wrap on small screens */
+    justify-content: center;
+}
+
+/* card */
+.product {
+    color: black;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 260px;          /* or any fixed / max‑width you like */
+    text-align: center;    /* keeps text + button centred */
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+    /* NEW ↓ – stack children vertically and center them */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* image */
+.product img {
+    width: 100%;           /* keeps full card width (optional)  */
+    max-width: 220px;      /* cap actual image size             */
+    height: auto;
+    margin: 0 auto;        /* ensures horizontal centring        */
+    border-radius: 8px;
+}
+
+
+
 /* Button styling */
 .btn {
     display: inline-block;
