@@ -222,3 +222,12 @@ footer {
 .footer-links img {
     width: 5%;
 }
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: left;
+}
+.faq-item h3 {
+    margin-bottom: 8px;
+}
