@@ -95,3 +95,47 @@ function sendEmail(e) {
     // open default mail client
     window.location.href = `mailto:${address}?subject=${subject}&body=${body}`;
 }
+
+const reviews = [
+    `"OMG they are Beautiful" – Corporation`,
+    `"These gloves are built like tanks!" – Alex T.`,
+    `"Elegant, durable, and reliable." – Maria G.`,
+    `"I’ve never had better wrist support." – James.`,
+    `"Looks and feels premium." – Sarah L.`
+];
+
+let currentReview = 0;
+
+function updateReview() {
+    document.getElementById("review-text").textContent = reviews[currentReview];
+    updateDots();
+}
+
+function nextReview() {
+    currentReview = (currentReview + 1) % reviews.length;
+    updateReview();
+}
+
+function prevReview() {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    updateReview();
+}
+
+function updateDots() {
+    const dotsContainer = document.getElementById("pagination-dots");
+    dotsContainer.innerHTML = "";
+    reviews.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === currentReview) dot.classList.add("active");
+        dot.onclick = () => {
+            currentReview = index;
+            updateReview();
+        };
+        dotsContainer.appendChild(dot);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateReview();
+});
