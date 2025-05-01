@@ -25,7 +25,18 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
+
+
             </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+
+            <div id="cart-dropdown" class="hidden">
+                <h3>Cart</h3>
+                <ul id="cart-items"></ul>
+                <p id="cart-total">Total: £0.00</p>
+            </div>
         </div>
     </nav>
     <br>

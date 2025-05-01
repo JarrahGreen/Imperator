@@ -139,3 +139,71 @@ function updateDots() {
 document.addEventListener("DOMContentLoaded", () => {
     updateReview();
 });
+
+const cart = [];
+const cartCount = document.getElementById("cart-count");
+const cartDropdown = document.getElementById("cart-dropdown");
+const cartItemsList = document.getElementById("cart-items");
+const cartTotalDisplay = document.getElementById("cart-total");
+
+function updateCartDisplay() {
+    cartItemsList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} (${item.weight}) - £${item.price.toFixed(2)}`;
+        cartItemsList.appendChild(li);
+        total += item.price;
+    });
+
+    cartTotalDisplay.textContent = `Total: £${total.toFixed(2)}`;
+    cartCount.textContent = cart.length;
+}
+
+function toggleCart() {
+    cartDropdown.classList.toggle("hidden");
+}
+
+// Make buttons functional
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            const card = button.closest(".product-card");
+            const name = card.dataset.name;
+            const price = parseFloat(card.dataset.price);
+            const weightSelect = card.querySelector(".product-weight");
+            const weight = weightSelect ? weightSelect.value : "N/A";
+
+            cart.push({ name, price, weight });
+            updateCartDisplay();
+        });
+    });
+});
+
+function updateCartDisplay() {
+    cartItemsList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+      ${item.name} (${item.weight}) - £${item.price.toFixed(2)}
+      <button class="remove-item" data-index="${index}">Remove</button>
+    `;
+        cartItemsList.appendChild(li);
+        total += item.price;
+    });
+
+    cartTotalDisplay.textContent = `Total: £${total.toFixed(2)}`;
+    cartCount.textContent = cart.length;
+
+    // Add event listeners for remove buttons
+    document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const index = parseInt(button.dataset.index);
+            cart.splice(index, 1);
+            updateCartDisplay();
+        });
+    });
+}
