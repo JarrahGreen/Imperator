@@ -156,7 +156,7 @@ nav {
 /* Product card styling */
 .product-card {
     background-color: #1a1a1a;
-    color: #fff;
+    color: black;
     border-radius: 16px;
     padding: 2rem;
     width: 300px;
@@ -187,7 +187,7 @@ nav {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #fff;
+    color: black;
 }
 
 .product-card .price {
@@ -199,7 +199,7 @@ nav {
 
 .product-card .description {
     font-size: 0.95rem;
-    color: #ccc;
+    color: black;
     margin-bottom: 1.2rem;
 }
 
@@ -208,7 +208,7 @@ nav {
     font-size: 0.85rem;
     font-weight: bold;
     margin: 0.75rem 0 0.3rem;
-    color: #f2f2f2;
+    color: black;
 }
 
 .product-card select {
@@ -508,9 +508,14 @@ footer {
 
 .product-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: none; /* Remove the 1200px limit */
+    box-sizing: border-box;
 }
+
 
 .image-gallery {
     flex: 1;
