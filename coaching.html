@@ -11,7 +11,7 @@
 <body>
 <header>
     <nav>
-        <div class="burger" onclick="toggleMenu()">
+        <div class="burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -20,7 +20,7 @@
         <div class="nav-center">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="timetable.html">Classes</a></li>
+                <!-- <li><a href="timetable.html">Classes</a></li> -->
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -41,30 +41,36 @@
     </nav>
 </header>
 
-<section id="home" class="hero">
-    <h1 style="font-size: 3em">Imperator Boxing</h1>
-    <h2>Train like a champion. Join our elite training programs.</h2>
-    <a href="timetable.html" class="btn">View Classes</a>
+<section id ="coachingHome" class="heroCoaching">
+    <video
+            class="bg-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            disablePictureInPicture
+    >
+        <source src="Media/Coaching%20video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+        <h1 style="font-size: 3em">Train like a champion. Join our elite training programs.</h1>
+
+    </div>
 </section>
 
 <section id="classes">
     <h2>Our Classes</h2>
     <p>We offer beginner, intermediate, and advanced boxing training sessions.</p>
-    <a href="timetable.html" class="btn">Book now</a>
+    <a href="contact.html" class="btn">Enquire now</a>
 </section>
 
 <section id="team">
     <h2>Meet Our Coaches</h2>
     <div class="team-container">
         <div class="coach">
-            <img src="Media/coach1.jpg" alt="Coach 1">
-            <h3><a href="Ollie.html">Coach Ollie</a></h3>
-            <p>Professional box fit coach</p>
-        </div>
-        <div class="coach">
-            <img src="Media/coach2.jpg" alt="Coach 2">
-            <h3>Coach Bob</h3>
-            <p>Certified Fitness Instructor</p>
+            <img src="Media/olly%20picture.jpeg" alt="Coach 1">
+            <h3>Coach Ollie</h3>
+            <a href="https://www.instagram.com/ollie_hughes_boxing/" class="btn">Instagram</a>
         </div>
     </div>
 </section>
