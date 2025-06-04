@@ -156,9 +156,33 @@ document.addEventListener("DOMContentLoaded", () => {
             // Don't close the cart
             return;
         }
-
         cartDropdown.classList.add("hidden");
     });
+
+    pay.addEventListener("click", async () => {
+        try {
+            console.log("Sending cart:", cart);
+            const response = await fetch("http://localhost:3000/create-checkout-session", {
+
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ cart }),
+            });
+
+            const data = await response.json();
+            if (data.url) {
+                window.location.href = data.url; // Redirect to Stripe Checkout
+            } else {
+                alert("Failed to initiate payment.");
+            }
+        } catch (error) {
+            console.error("Payment error:", error);
+            alert("Something went wrong while redirecting to payment.");
+        }
+    });
+
 
 
 });
