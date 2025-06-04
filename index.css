@@ -631,3 +631,20 @@ footer {
     border: 2px solid #000;
     background-color: #f0f0f0;
 }
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .image-gallery,
+    .product-info {
+        max-width: 100%;
+    }
+
+    .thumbnail-row {
+        justify-content: center;
+    }
+}

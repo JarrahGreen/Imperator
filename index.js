@@ -89,33 +89,36 @@ function handleAddToCart(button) {
         return;
     }
 
-
     const originalText = button.textContent;
     let dotCount = 0;
+    let stepCount = 0;
+    const maxSteps = 4;
 
     button.textContent = "Adding";
 
     const dotInterval = setInterval(() => {
         dotCount = (dotCount % 3) + 1;
         button.textContent = "Adding" + ".".repeat(dotCount);
+        stepCount++;
+
+        if (stepCount >= maxSteps) {
+            clearInterval(dotInterval);
+            button.textContent = "Added!";
+
+            // Show cart dropdown here
+            const cartDropdown = document.getElementById("cart-dropdown");
+            if (!cartDropdown) {
+                console.error("Cart dropdown not found!");
+            } else {
+                cartDropdown.classList.remove("hidden");
+            }
+
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1000);
+        }
     }, 300);
 
-    setTimeout(() => {
-        clearInterval(dotInterval);
-        button.textContent = "Added!";
-
-        // Show cart dropdown here
-        const cartDropdown = document.getElementById("cart-dropdown");
-        if (!cartDropdown) {
-            console.error("Cart dropdown not found!");
-        } else {
-            cartDropdown.classList.remove("hidden");
-        }
-
-        setTimeout(() => {
-            button.textContent = originalText;
-        }, 1000); // reset to original after 1s
-    }, 1500);
 
 
 
