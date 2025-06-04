@@ -254,6 +254,12 @@ nav {
     background-color: #cc0000;
 }
 
+.adding-dots {
+    margin-left: 5px;
+    font-weight: bold;
+    color: #0070f3;
+}
+
 .btn {
     display: inline-block;
     border-radius: 5px;

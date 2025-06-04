@@ -89,6 +89,37 @@ function handleAddToCart(button) {
         return;
     }
 
+
+    const originalText = button.textContent;
+    let dotCount = 0;
+
+    button.textContent = "Adding";
+
+    const dotInterval = setInterval(() => {
+        dotCount = (dotCount % 3) + 1;
+        button.textContent = "Adding" + ".".repeat(dotCount);
+    }, 300);
+
+    setTimeout(() => {
+        clearInterval(dotInterval);
+        button.textContent = "Added!";
+
+        // Show cart dropdown here
+        const cartDropdown = document.getElementById("cart-dropdown");
+        if (!cartDropdown) {
+            console.error("Cart dropdown not found!");
+        } else {
+            cartDropdown.classList.remove("hidden");
+        }
+
+        setTimeout(() => {
+            button.textContent = originalText;
+        }, 1000); // reset to original after 1s
+    }, 1500);
+
+
+
+
     const weight = selectedWeightBtn.textContent;
     const quantity = parseInt(card.querySelector("#quantity")?.textContent || "1");
 
