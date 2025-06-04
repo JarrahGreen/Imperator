@@ -1,5 +1,6 @@
+require('dotenv').config();
 const express = require('express');
-const stripe = require('stripe')('REDACTED_KEY'); // Replace with your Stripe secret key
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const cors = require('cors');
 
 const app = express();
