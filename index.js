@@ -245,10 +245,20 @@ const reviews = [
 
 function updateReview() {
     const reviewText = document.getElementById("review-text");
-    if (reviewText) {
+    if (!reviewText) return;
+
+    reviewText.classList.add("fade-out");
+
+    setTimeout(() => {
         reviewText.textContent = reviews[currentReview];
-        updateDots();
-    }
+        reviewText.classList.remove("fade-out");
+        reviewText.classList.add("fade-in");
+
+        setTimeout(() => {
+            reviewText.classList.remove("fade-in");
+        }, 400); // duration matches CSS transition
+    }, 400); // wait for fade-out before updating
+    updateDots();
 }
 
 function nextReview() {
@@ -280,6 +290,8 @@ function updateDots() {
 document.addEventListener("DOMContentLoaded", updateReview);
 
 // ========== Timetable Loader ==========
+/*
+
 function loadTimetable() {
     const timetables = {
         school1: [
@@ -326,3 +338,4 @@ function bookClass(cell) {
 }
 
 document.addEventListener("DOMContentLoaded", loadTimetable);
+ */

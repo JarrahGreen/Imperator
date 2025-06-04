@@ -648,3 +648,16 @@ footer {
         justify-content: center;
     }
 }
+
+#review-text {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+
+#review-text.fade-out {
+    opacity: 0;
+}
+
+#review-text.fade-in {
+    opacity: 1;
+}
