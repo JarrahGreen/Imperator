@@ -78,6 +78,7 @@ function clearCart() {
     localStorage.removeItem("cart");
 }
 
+/*
 function handleAddToCart(button) {
     const card = button.closest(".product-card");
     const name = card.getAttribute("data-name");
@@ -130,6 +131,8 @@ function handleAddToCart(button) {
     updateCartDisplay();
 }
 
+
+ */
 // ========== Navigation (Burger Menu) ==========
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -169,12 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
+/*
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", () => handleAddToCart(button));
     });
 
 
+
+ */
 
     document.getElementById("clear-cart")?.addEventListener("click", clearCart);
     document.getElementById("cart-icon")?.addEventListener("click", toggleCart);
