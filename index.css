@@ -450,11 +450,16 @@ footer {
     height: 50px;
     border: 2px solid #ddd;
     border-radius: 50%;
-    font-size: 24px;
     background: black;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 24px;
+    line-height: 50px; /* Make it equal to height */
+    text-align: center;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 
 .dots {
     display: flex;
