@@ -168,9 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
+    /*
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", () => handleAddToCart(button));
     });
+
+     */
 
     document.getElementById("clear-cart")?.addEventListener("click", clearCart);
     document.getElementById("cart-icon")?.addEventListener("click", toggleCart);
